@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #061113;
+  color: #ffffff;
+  font-family: Calibri, Arial, Helvetica, sans-serif;
+}
+
+nav a {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f5f7fa;
+  font-family: Calibri, Arial, sans-serif;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #19e3d1;
+}
+
+@keyframes ambientPulse {
+  0%, 100% {
+    opacity: 0.08;
+  }
+
+  50% {
+    opacity: 0.22;
+  }
+}
+
+.flash-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(45,212,191,.35), transparent 28%),
+    radial-gradient(circle at 85% 25%, rgba(255,255,255,.18), transparent 24%),
+    radial-gradient(circle at 50% 85%, rgba(45,212,191,.22), transparent 35%);
+  mix-blend-mode: screen;
+  animation: ambientPulse 7s ease-in-out infinite;
+}
