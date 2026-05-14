@@ -67,3 +67,9 @@ nav a:hover {
   background: rgba(45, 212, 191, 0.12);
   color: #5eead4;
 }
+.mobile-menu-link-active {
+  border-color: #5eead4;
+  background: rgba(45, 212, 191, 0.28);
+  color: #5eead4;
+  transform: scale(0.98);
+}
