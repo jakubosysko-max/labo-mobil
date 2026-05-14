@@ -89,7 +89,7 @@ export default function Home() {
             </a>
           </nav>
 
-          {/* TELEFON DESKTOP */}
+          {/* TELEFON DESKTOP -> WHATSAPP */}
           <a
             href="https://wa.me/48791619595"
             target="_blank"
@@ -99,40 +99,61 @@ export default function Home() {
             +48 791 619 595
           </a>
 
-          {/* MENU MOBILE BUTTON */}
+          {/* MENU BUTTON MOBILE */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-xl border border-white/10 p-3 text-teal-300 md:hidden"
+            className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-2xl border border-teal-300/30 bg-white/[0.04] text-teal-300 shadow-lg shadow-black/30 transition active:scale-95 md:hidden"
             aria-label="Otwórz menu"
           >
-            {menuOpen ? <X size={26} /> : <Menu size={26} />}
+            {menuOpen ? <X size={27} /> : <Menu size={27} />}
           </button>
         </div>
 
         {/* MENU MOBILE */}
         {menuOpen && (
-          <nav className="border-t border-white/10 bg-[#061113] px-4 py-4 md:hidden">
-            <div className="flex flex-col gap-4 text-center text-sm font-semibold uppercase tracking-[0.08em] text-slate-200">
-              {sections.map((section) => (
-                <a
-                  key={section.id}
-                  href={`#${section.id}`}
-                  onClick={() => setMenuOpen(false)}
-                  className="rounded-xl border border-white/10 py-3 transition hover:border-teal-300/50 hover:text-teal-300"
-                >
-                  {section.label}
-                </a>
-              ))}
+          <div className="fixed inset-x-0 top-[84px] z-40 border-b border-teal-300/20 bg-[#061113]/95 px-4 pb-5 pt-4 shadow-2xl shadow-black/60 backdrop-blur-2xl md:hidden">
+            <nav className="mx-auto max-w-md rounded-[28px] border border-white/10 bg-white/[0.04] p-4">
+              <div className="mb-4 text-center">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-teal-300">
+                  Menu
+                </p>
 
+                <p className="mt-1 text-sm text-slate-400">
+                  LABO-MOBIL
+                </p>
+              </div>
+
+              <div className="grid gap-3">
+                {sections.map((section) => (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    onClick={() => setMenuOpen(false)}
+                    className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-slate-100 transition active:scale-[0.98] hover:border-teal-300/50 hover:bg-teal-300/10 hover:text-teal-300"
+                  >
+                    {section.label}
+                  </a>
+                ))}
+
+                <a
+                  href="#kontakt"
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-2xl border border-teal-300/40 bg-teal-300/10 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-teal-300 transition active:scale-[0.98] hover:bg-teal-300 hover:text-slate-950"
+                >
+                  Kontakt
+                </a>
+              </div>
+
+              {/* MOBILE -> NORMALNE POŁĄCZENIE */}
               <a
-                href="#kontakt"
-                onClick={() => setMenuOpen(false)}
-                className="rounded-xl border border-white/10 py-3 transition hover:border-teal-300/50 hover:text-teal-300"
+                href="tel:+48791619595"
+                className="mt-4 flex items-center justify-center gap-3 rounded-2xl bg-teal-400 px-4 py-4 text-sm font-black text-slate-950 shadow-xl shadow-teal-950/50 transition active:scale-[0.98]"
               >
-                Kontakt
+                <Phone size={20} />
+                Zadzwoń teraz
               </a>
-            </div>
-          </nav>
+            </nav>
+          </div>
         )}
       </header>
 
@@ -163,11 +184,9 @@ export default function Home() {
 
       {/* PŁYWAJĄCY TELEFON MOBILE */}
       <a
-        href="https://wa.me/48791619595"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="tel:+48791619595"
         className="fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-teal-400 text-slate-950 shadow-2xl shadow-teal-950/60 md:hidden"
-        aria-label="Kontakt telefoniczny LABO-MOBIL"
+        aria-label="Zadzwoń do LABO-MOBIL"
       >
         <Phone size={26} />
       </a>
@@ -186,7 +205,7 @@ export default function Home() {
             className="mb-6 h-[72px] w-auto object-contain md:h-[76px]"
           />
 
-          <div className="grid gap-6 text-sm text-slate-300 md:grid-cols-5 md:text-base">
+          <div className="grid gap-6 text-sm text-slate-300 md:grid-cols-6 md:text-base">
             <div className="flex items-start justify-center gap-3">
               <Building2
                 className="mt-1 shrink-0 text-teal-300"
@@ -200,13 +219,26 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="flex items-center justify-center gap-3">
+            {/* DESKTOP -> WHATSAPP */}
+            <div className="hidden items-center justify-center gap-3 md:flex">
               <Phone className="shrink-0 text-teal-300" size={20} />
 
               <a
                 href="https://wa.me/48791619595"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="transition hover:text-teal-300"
+              >
+                +48 791 619 595
+              </a>
+            </div>
+
+            {/* MOBILE -> TELEFON */}
+            <div className="flex items-center justify-center gap-3 md:hidden">
+              <Phone className="shrink-0 text-teal-300" size={20} />
+
+              <a
+                href="tel:+48791619595"
                 className="transition hover:text-teal-300"
               >
                 +48 791 619 595
@@ -222,6 +254,15 @@ export default function Home() {
               >
                 labomobil@op.pl
               </a>
+            </div>
+
+            {/* GG */}
+            <div className="text-center">
+              <span className="font-semibold text-teal-300">
+                GG
+              </span>
+              <br />
+              2538182
             </div>
 
             <div className="text-center">
