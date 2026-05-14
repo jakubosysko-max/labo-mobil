@@ -119,7 +119,7 @@ export default function Home() {
                     key={section.id}
                     href={`#${section.id}`}
                     onClick={() => setMenuOpen(false)}
-                    className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-slate-100 transition active:scale-[0.96] active:border-teal-300 active:bg-teal-400 active:text-slate-950 hover:border-teal-300/50 hover:bg-teal-300/10 hover:text-teal-300"
+                    className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-slate-100 transition hover:border-teal-300/60 hover:bg-teal-400/20 hover:text-teal-300 active:scale-[0.96] active:border-teal-300 active:bg-teal-400 active:text-slate-950"
                   >
                     {section.label}
                   </a>
@@ -128,7 +128,7 @@ export default function Home() {
                 <a
                   href="#kontakt"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-2xl border border-teal-300/40 bg-teal-300/10 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-teal-300 transition active:scale-[0.96] active:bg-teal-400 active:text-slate-950 hover:bg-teal-300 hover:text-slate-950"
+                  className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-slate-100 transition hover:border-teal-300/60 hover:bg-teal-400/20 hover:text-teal-300 active:scale-[0.96] active:border-teal-300 active:bg-teal-400 active:text-slate-950"
                 >
                   Kontakt
                 </a>
