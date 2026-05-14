@@ -89,7 +89,7 @@ export default function Home() {
             </a>
           </nav>
 
-          {/* TELEFON DESKTOP -> WHATSAPP */}
+          {/* DESKTOP -> WHATSAPP */}
           <a
             href="https://wa.me/48791619595"
             target="_blank"
@@ -113,23 +113,13 @@ export default function Home() {
         {menuOpen && (
           <div className="fixed inset-x-0 top-[84px] z-40 border-b border-teal-300/20 bg-[#061113]/95 px-4 pb-5 pt-4 shadow-2xl shadow-black/60 backdrop-blur-2xl md:hidden">
             <nav className="mx-auto max-w-md rounded-[28px] border border-white/10 bg-white/[0.04] p-4">
-              <div className="mb-4 text-center">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-teal-300">
-                  Menu
-                </p>
-
-                <p className="mt-1 text-sm text-slate-400">
-                  LABO-MOBIL
-                </p>
-              </div>
-
               <div className="grid gap-3">
                 {sections.map((section) => (
                   <a
                     key={section.id}
                     href={`#${section.id}`}
                     onClick={() => setMenuOpen(false)}
-                    className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-slate-100 transition active:scale-[0.98] hover:border-teal-300/50 hover:bg-teal-300/10 hover:text-teal-300"
+                    className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-slate-100 transition active:scale-[0.96] active:border-teal-300 active:bg-teal-400 active:text-slate-950 hover:border-teal-300/50 hover:bg-teal-300/10 hover:text-teal-300"
                   >
                     {section.label}
                   </a>
@@ -138,20 +128,11 @@ export default function Home() {
                 <a
                   href="#kontakt"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-2xl border border-teal-300/40 bg-teal-300/10 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-teal-300 transition active:scale-[0.98] hover:bg-teal-300 hover:text-slate-950"
+                  className="rounded-2xl border border-teal-300/40 bg-teal-300/10 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-teal-300 transition active:scale-[0.96] active:bg-teal-400 active:text-slate-950 hover:bg-teal-300 hover:text-slate-950"
                 >
                   Kontakt
                 </a>
               </div>
-
-              {/* MOBILE -> NORMALNE POŁĄCZENIE */}
-              <a
-                href="tel:+48791619595"
-                className="mt-4 flex items-center justify-center gap-3 rounded-2xl bg-teal-400 px-4 py-4 text-sm font-black text-slate-950 shadow-xl shadow-teal-950/50 transition active:scale-[0.98]"
-              >
-                <Phone size={20} />
-                Zadzwoń teraz
-              </a>
             </nav>
           </div>
         )}
@@ -205,7 +186,7 @@ export default function Home() {
             className="mb-6 h-[72px] w-auto object-contain md:h-[76px]"
           />
 
-          <div className="grid gap-6 text-sm text-slate-300 md:grid-cols-6 md:text-base">
+          <div className="grid gap-6 text-sm text-slate-300 md:grid-cols-5 md:text-base">
             <div className="flex items-start justify-center gap-3">
               <Building2
                 className="mt-1 shrink-0 text-teal-300"
@@ -254,15 +235,6 @@ export default function Home() {
               >
                 labomobil@op.pl
               </a>
-            </div>
-
-            {/* GG */}
-            <div className="text-center">
-              <span className="font-semibold text-teal-300">
-                GG
-              </span>
-              <br />
-              2538182
             </div>
 
             <div className="text-center">
