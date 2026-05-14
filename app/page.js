@@ -14,8 +14,7 @@ const sections = [
 ];
 
 const mobileMenuLink =
-  "rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-slate-100 transition duration-200 hover:border-teal-300 hover:bg-teal-400 hover:text-slate-950 active:scale-[0.96]";
-
+  "rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-slate-100 transition duration-200 hover:border-teal-300 hover:bg-teal-400/25 hover:text-teal-300 focus:border-teal-300 focus:bg-teal-400 focus:text-slate-950 active:scale-[0.96] active:border-teal-300 active:bg-teal-400 active:text-slate-950";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
