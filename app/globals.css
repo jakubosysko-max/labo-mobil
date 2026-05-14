@@ -46,3 +46,24 @@ nav a:hover {
   mix-blend-mode: screen;
   animation: ambientPulse 7s ease-in-out infinite;
 }
+.mobile-menu-link {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+  color: #f1f5f9;
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:focus,
+.mobile-menu-link:active {
+  border-color: #5eead4;
+  background: rgba(45, 212, 191, 0.22);
+  color: #5eead4;
+  transform: scale(0.98);
+}
+
+.mobile-menu-link-contact {
+  border-color: rgba(94, 234, 212, 0.45);
+  background: rgba(45, 212, 191, 0.12);
+  color: #5eead4;
+}

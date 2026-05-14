@@ -14,7 +14,8 @@ const sections = [
 ];
 
 const mobileMenuLink =
-  "rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em] text-slate-100 transition duration-200 hover:border-teal-300 hover:bg-teal-400/25 hover:text-teal-300 focus:border-teal-300 focus:bg-teal-400 focus:text-slate-950 active:scale-[0.96] active:border-teal-300 active:bg-teal-400 active:text-slate-950";
+  "mobile-menu-link rounded-2xl px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.08em]";
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -22,6 +23,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#061113] text-white">
       <div className="flash-overlay" />
 
+      {/* HEADER */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#061113]/95 backdrop-blur-xl">
         <div className="relative mx-auto flex h-[84px] max-w-7xl items-center justify-center px-4 md:h-[82px] md:justify-between md:px-6">
           <Image
@@ -33,6 +35,7 @@ export default function Home() {
             className="h-[68px] w-auto object-contain md:h-[75px]"
           />
 
+          {/* MENU DESKTOP */}
           <nav className="hidden gap-8 text-[15px] font-semibold uppercase tracking-[0.08em] text-slate-200 lg:flex">
             {sections.map((section) => (
               <a
@@ -52,6 +55,7 @@ export default function Home() {
             </a>
           </nav>
 
+          {/* DESKTOP -> WHATSAPP */}
           <a
             href="https://wa.me/48791619595"
             target="_blank"
@@ -61,6 +65,7 @@ export default function Home() {
             +48 791 619 595
           </a>
 
+          {/* MENU BUTTON MOBILE */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-2xl border border-teal-300/30 bg-white/[0.04] text-teal-300 shadow-lg shadow-black/30 transition active:scale-95 md:hidden"
@@ -70,6 +75,7 @@ export default function Home() {
           </button>
         </div>
 
+        {/* MENU MOBILE */}
         {menuOpen && (
           <div className="fixed inset-x-0 top-[84px] z-40 border-b border-teal-300/20 bg-[#061113]/95 px-4 pb-5 pt-4 shadow-2xl shadow-black/60 backdrop-blur-2xl md:hidden">
             <nav className="mx-auto max-w-md rounded-[28px] border border-white/10 bg-white/[0.04] p-4">
@@ -88,7 +94,7 @@ export default function Home() {
                 <a
                   href="#kontakt"
                   onClick={() => setMenuOpen(false)}
-                  className={mobileMenuLink}
+                  className={`${mobileMenuLink} mobile-menu-link-contact`}
                 >
                   Kontakt
                 </a>
@@ -98,6 +104,7 @@ export default function Home() {
         )}
       </header>
 
+      {/* SEKCJE */}
       <section className="mx-auto max-w-7xl px-4 py-6 md:px-6 md:py-8">
         <div className="space-y-8 md:space-y-10">
           {sections.map((section) => (
@@ -118,6 +125,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* MAIL FLOATING BUTTON */}
       <a
         href="mailto:labomobil@op.pl?subject=Zapytanie%20ze%20strony%20LABO-MOBIL"
         className="fixed bottom-20 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-teal-300/40 bg-[#061113] text-teal-300 shadow-2xl shadow-black/60 md:hidden"
@@ -126,6 +134,7 @@ export default function Home() {
         <Mail size={25} />
       </a>
 
+      {/* PHONE FLOATING BUTTON */}
       <a
         href="tel:+48791619595"
         className="fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-teal-400 text-slate-950 shadow-2xl shadow-teal-950/60 md:hidden"
@@ -134,6 +143,7 @@ export default function Home() {
         <Phone size={26} />
       </a>
 
+      {/* FOOTER */}
       <footer
         id="kontakt"
         className="mt-10 border-t border-white/10 bg-black/30 px-4 py-6 font-[Calibri]"
@@ -150,6 +160,7 @@ export default function Home() {
           <div className="grid gap-6 text-sm text-slate-300 md:grid-cols-5 md:text-base">
             <div className="flex items-start justify-center gap-3">
               <Building2 className="mt-1 shrink-0 text-teal-300" size={20} />
+
               <span>
                 ul. Grzybowa 25
                 <br />
@@ -157,8 +168,10 @@ export default function Home() {
               </span>
             </div>
 
+            {/* DESKTOP -> WHATSAPP */}
             <div className="hidden items-center justify-center gap-3 md:flex">
               <Phone className="shrink-0 text-teal-300" size={20} />
+
               <a
                 href="https://wa.me/48791619595"
                 target="_blank"
@@ -169,15 +182,21 @@ export default function Home() {
               </a>
             </div>
 
+            {/* MOBILE -> PHONE */}
             <div className="flex items-center justify-center gap-3 md:hidden">
               <Phone className="shrink-0 text-teal-300" size={20} />
-              <a href="tel:+48791619595" className="transition hover:text-teal-300">
+
+              <a
+                href="tel:+48791619595"
+                className="transition hover:text-teal-300"
+              >
                 +48 791 619 595
               </a>
             </div>
 
             <div className="flex items-center justify-center gap-3">
               <Mail className="shrink-0 text-teal-300" size={20} />
+
               <a
                 href="mailto:labomobil@op.pl?subject=Zapytanie%20ze%20strony%20LABO-MOBIL"
                 className="transition hover:text-teal-300"
