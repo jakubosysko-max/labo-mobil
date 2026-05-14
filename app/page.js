@@ -143,6 +143,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SEO TEXT */}
+      <section className="sr-only">
+        <h1>
+          LABO-MOBIL – przeglądy dróg i obiektów mostowych
+        </h1>
+
+        <p>
+          LABO-MOBIL wykonuje przeglądy dróg, przeglądy obiektów
+          mostowych, fotorejestrację pasa drogowego oraz mapy stanu
+          technicznego nawierzchni.
+        </p>
+
+        <p>
+          Firma działa na terenie całej Polski i oferuje nowoczesne
+          systemy pomiarowe, dokumentację techniczną oraz cyfrowe mapy
+          stanu infrastruktury drogowej.
+        </p>
+
+        <p>
+          Zakres usług obejmuje ocenę stanu technicznego dróg,
+          inwentaryzację pasa drogowego, dokumentację fotograficzną,
+          przeglądy mostów oraz systemy do fotorejestracji.
+        </p>
+      </section>
+
       <a
         href="mailto:labomobil@op.pl?subject=Zapytanie%20ze%20strony%20LABO-MOBIL"
         className="fixed bottom-20 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-teal-300/40 bg-[#061113] text-teal-300 shadow-2xl shadow-black/60 md:hidden"
